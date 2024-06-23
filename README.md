@@ -1,9 +1,44 @@
-This repo hosts the official MediaPipe samples with a goal of showing the fundamental steps involved to create apps with our machine learning platform. 
+# MediaPipe LLM Inference Android Demo
 
-External PRs for fixes are welcome, however new sample/demo PRs will likely be rejected to maintain the simplicity of this repo for ongoing maintenance. It is strongly recommended that contributors who are interested in submitting more complex samples or demos host their samples in their own public repos and create written tutorials to share with the community. Contributors can also submit these projects and tutorials to the [Google DevLibrary](https://devlibrary.withgoogle.com/)
+### Overview
 
+This is a sample app that demonstrates how to use the LLM Inference API to run common text-to-text generation tasks like information retrieval, email drafting, and document summarization.
 
-MediaPipe Solutions streamlines on-device ML development and deployment with flexible low-code / no-code tools that provide the modular building blocks for creating custom high-performance solutions for cross-platform deployment. It consists of the following components:
-* MediaPipe Tasks (low-code): create and deploy custom e2e ML solution pipelines
-* MediaPipe Model Maker (low-code): create custom ML models from advanced solutions
-* MediaPipe Studio (no-code): create, evaluate, debug, benchmark, prototype, deploy advanced production-level solutions
+This application must be run on a physical Android device to take advantage of the device GPU.
+
+![LLM Inference Demo](llm_inference.png)
+
+## Build the demo using Android Studio
+
+### Prerequisites
+
+*   The **[Android Studio](https://developer.android.com/studio/index.html)**
+    IDE. This sample has been tested on Android Studio Hedgehog.
+
+*   A physical Android device with a minimum OS version of SDK 24 (Android 7.0 -
+    Nougat) with developer mode enabled.
+
+### Building
+
+*   Open Android Studio. From the Welcome screen, select Open an existing
+    Android Studio project.
+
+*   From the Open File or Project window that appears, navigate to and select
+    the mediapipe/examples/llm_inference/android directory. Click OK. You may
+    be asked if you trust the project. Select Trust.
+
+*   If it asks you to do a Gradle Sync, click OK.
+
+*   With your Android device connected to your computer and developer mode
+    enabled, click on the green Run arrow in Android Studio.
+
+### Models used
+
+You can download one of the [compatible models](https://developers.google.com/mediapipe/solutions/genai/llm_inference#models).
+
+Once you download it, place it under the path defined as MODEL_PATH in InferenceModel on the Android device
+ (eg. /data/local/tmp/llm/model.bin).
+
+The easiest way to do that would be to use Android Studio's [Device Explorer](https://developer.android.com/studio/debug/device-file-explorer).
+
+For more details, see the [models section](https://developers.google.com/mediapipe/solutions/genai/llm_inference/android#model) in the LLM Inference guide
